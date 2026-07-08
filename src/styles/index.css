@@ -1,0 +1,179 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-script: 'Yellowtail', cursive;
+
+  /* Asphalt — night-city navy surfaces */
+  --color-asphalt-sunken: #060912;
+  --color-asphalt: #0a0e17;
+  --color-surface-1: #0e1322;
+  --color-surface-2: #121a2e;
+  --color-surface-3: #16203a;
+  --color-surface-4: #1b2745;
+  --color-surface-5: #223052;
+
+  /* Neon triad */
+  --color-neon-amber: #ffc24b;
+  --color-on-neon-amber: #0a0e17;
+  --color-neon-pink: #ff4d8d;
+  --color-streetlight: #5be1e6;
+
+  /* Text */
+  --color-on-surface: #eef1f8;
+  --color-on-surface-variant: #98a3bf;
+  --color-muted: #5f6a84;
+
+  /* Outline */
+  --color-outline: #39466b;
+  --color-outline-variant: #232c48;
+
+  /* Status */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Neon glows — hover states and brand moments only */
+  --shadow-glow-amber: 0 0 2px #ffc24b, 0 0 12px rgb(255 194 75 / 0.4),
+    0 0 32px rgb(255 194 75 / 0.15);
+  --shadow-glow-pink: 0 0 2px #ff4d8d, 0 0 12px rgb(255 77 141 / 0.4),
+    0 0 32px rgb(255 77 141 / 0.15);
+  --shadow-glow-cyan: 0 0 2px #5be1e6, 0 0 12px rgb(91 225 230 / 0.4),
+    0 0 32px rgb(91 225 230 / 0.15);
+  --shadow-card: 0 8px 30px rgb(0 0 0 / 0.35);
+  --shadow-focus: 0 0 0 3px rgb(255 194 75 / 0.4);
+
+  /* Motion spec */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+  --ease-accelerate: cubic-bezier(0.4, 0, 1, 1);
+  --ease-expressive: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --animate-fade-up: fade-up 300ms var(--ease-decelerate) both;
+  --animate-fade-in: fade-in 300ms var(--ease-decelerate) both;
+  --animate-shimmer: shimmer 1.5s ease-in-out infinite;
+  --animate-neon-flicker: neon-flicker 900ms steps(1, end) both;
+  --animate-hero-arrive: hero-arrive 450ms var(--ease-expressive) both;
+  --animate-headlight-sweep: headlight-sweep 450ms var(--ease-decelerate) both;
+  --animate-foil-sweep: foil-sweep 300ms var(--ease-standard) both;
+  --animate-wheel-bob: wheel-bob 700ms ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @keyframes shimmer {
+    from {
+      background-position: 200% 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+
+  /* Neon tube warming up: two stutters, then steady */
+  @keyframes neon-flicker {
+    0% {
+      opacity: 0;
+    }
+    12% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 0.35;
+    }
+    34% {
+      opacity: 1;
+    }
+    44% {
+      opacity: 0.5;
+    }
+    56%,
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes hero-arrive {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes headlight-sweep {
+    from {
+      transform: translateX(-120%) skewX(-20deg);
+    }
+    to {
+      transform: translateX(220%) skewX(-20deg);
+    }
+  }
+
+  @keyframes foil-sweep {
+    from {
+      background-position: -150% 0;
+    }
+    to {
+      background-position: 150% 0;
+    }
+  }
+
+  @keyframes wheel-bob {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1px);
+    }
+  }
+}
+
+@layer base {
+  html {
+    @apply bg-asphalt font-sans text-on-surface antialiased;
+  }
+
+  button,
+  a,
+  [role='button'] {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+    border-radius: 4px;
+  }
+}
+
+/* Global kill switch: decorative motion is a progressive enhancement */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
