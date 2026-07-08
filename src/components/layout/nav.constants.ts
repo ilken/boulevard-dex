@@ -1,5 +1,5 @@
 export interface NavItem {
-  to: '/' | '/checklist' | '/profile'
+  to: '/' | '/garage' | '/profile'
   label: string
   /** Inline icon path (24×24 viewBox), stroked. */
   iconPath: string
@@ -12,8 +12,8 @@ export const NAV_ITEMS: readonly NavItem[] = [
     iconPath: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z',
   },
   {
-    to: '/checklist',
-    label: 'Checklist',
+    to: '/garage',
+    label: 'My Garage',
     iconPath: 'M4 6h2v2H4zM9 7h11M4 11h2v2H4zM9 12h11M4 16h2v2H4zM9 17h11',
   },
   {

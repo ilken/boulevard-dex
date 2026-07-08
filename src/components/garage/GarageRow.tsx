@@ -6,11 +6,11 @@ import type { Car } from '@/data/dex.types'
 import { toggleMint, toggleOwned, useCollection } from '@/hooks/use-collection'
 import { formatDexNumber } from '@/lib/format'
 
-interface ChecklistRowProps {
+interface GarageRowProps {
   car: Car
 }
 
-export function ChecklistRow({ car }: ChecklistRowProps) {
+export function GarageRow({ car }: GarageRowProps) {
   const { isOwned, isMint } = useCollection()
 
   return (

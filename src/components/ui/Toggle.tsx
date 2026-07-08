@@ -10,7 +10,7 @@ const VARIANT_ON: Record<ToggleProps['variant'], string> = {
   mint: 'bg-streetlight shadow-glow-cyan',
 }
 
-/** Accessible switch used by the checklist, grid, and detail screens. */
+/** Accessible switch used by the garage, grid, and detail screens. */
 export function Toggle({ checked, onChange, label, variant }: ToggleProps) {
   return (
     <label className="flex cursor-pointer items-center gap-2">

@@ -10,7 +10,7 @@ interface CarImageProps {
 }
 
 /**
- * The single image component for the whole app (grid, checklist, detail, avatar).
+ * The single image component for the whole app (grid, garage, detail, avatar).
  * Photos live in public/cars/{id}.webp; missing ones degrade to the branded silhouette.
  */
 export function CarImage({ car, className }: CarImageProps) {

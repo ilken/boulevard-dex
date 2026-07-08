@@ -10,7 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProfileRouteImport } from './routes/profile'
-import { Route as ChecklistRouteImport } from './routes/checklist'
+import { Route as GarageRouteImport } from './routes/garage'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CarsSlugRouteImport } from './routes/cars.$slug'
 
@@ -19,9 +19,9 @@ const ProfileRoute = ProfileRouteImport.update({
   path: '/profile',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ChecklistRoute = ChecklistRouteImport.update({
-  id: '/checklist',
-  path: '/checklist',
+const GarageRoute = GarageRouteImport.update({
+  id: '/garage',
+  path: '/garage',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,34 +37,34 @@ const CarsSlugRoute = CarsSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/checklist': typeof ChecklistRoute
+  '/garage': typeof GarageRoute
   '/profile': typeof ProfileRoute
   '/cars/$slug': typeof CarsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/checklist': typeof ChecklistRoute
+  '/garage': typeof GarageRoute
   '/profile': typeof ProfileRoute
   '/cars/$slug': typeof CarsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/checklist': typeof ChecklistRoute
+  '/garage': typeof GarageRoute
   '/profile': typeof ProfileRoute
   '/cars/$slug': typeof CarsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/checklist' | '/profile' | '/cars/$slug'
+  fullPaths: '/' | '/garage' | '/profile' | '/cars/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/checklist' | '/profile' | '/cars/$slug'
-  id: '__root__' | '/' | '/checklist' | '/profile' | '/cars/$slug'
+  to: '/' | '/garage' | '/profile' | '/cars/$slug'
+  id: '__root__' | '/' | '/garage' | '/profile' | '/cars/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ChecklistRoute: typeof ChecklistRoute
+  GarageRoute: typeof GarageRoute
   ProfileRoute: typeof ProfileRoute
   CarsSlugRoute: typeof CarsSlugRoute
 }
@@ -78,11 +78,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/checklist': {
-      id: '/checklist'
-      path: '/checklist'
-      fullPath: '/checklist'
-      preLoaderRoute: typeof ChecklistRouteImport
+    '/garage': {
+      id: '/garage'
+      path: '/garage'
+      fullPath: '/garage'
+      preLoaderRoute: typeof GarageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -104,7 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ChecklistRoute: ChecklistRoute,
+  GarageRoute: GarageRoute,
   ProfileRoute: ProfileRoute,
   CarsSlugRoute: CarsSlugRoute,
 }

@@ -1,14 +1,14 @@
 import type { Car } from '@/data/dex.types'
 import { useCollection } from '@/hooks/use-collection'
 
-import { ChecklistRow } from './ChecklistRow'
+import { GarageRow } from './GarageRow'
 
-interface ChecklistYearSectionProps {
+interface GarageYearSectionProps {
   year: number
   cars: readonly Car[]
 }
 
-export function ChecklistYearSection({ year, cars }: ChecklistYearSectionProps) {
+export function GarageYearSection({ year, cars }: GarageYearSectionProps) {
   const { stats } = useCollection()
   const yearStats = stats.byYear.find((candidate) => candidate.year === year)
 
@@ -26,7 +26,7 @@ export function ChecklistYearSection({ year, cars }: ChecklistYearSectionProps) 
       </h2>
       <ul>
         {cars.map((car) => (
-          <ChecklistRow key={car.id} car={car} />
+          <GarageRow key={car.id} car={car} />
         ))}
       </ul>
     </section>

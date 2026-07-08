@@ -10,7 +10,7 @@ metal. Real Riders. Walmart shelves only.
 
 - **Dex** — all 150 numbered cars as cards with photos, search, year/mix/status filters (shareable
   via URL), odometer stats, and per-year completion.
-- **Checklist** — one row per car with Owned and Mint-in-box switches (mint implies owned).
+- **My Garage** — one row per car with Owned and Mint-in-box switches (mint implies owned).
 - **Car detail** — hero photo, specs, inline toggles, prev/next dex navigation.
 - **Profile** — nickname, city, country, and a Boulevard car as your avatar. Stored in
   localStorage with a versioned schema, ready for trading features later.
