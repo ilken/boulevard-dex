@@ -1,32 +1,35 @@
-# React + TypeScript + Vite
+# Boulevard Dex
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A Pokédex-style collection tracker for the **Hot Wheels Boulevard** reboot — the only Hot Wheels
+premium line with continuous numbering across years (#001 in 2020 to #150 and counting). Metal on
+metal. Real Riders. Walmart shelves only.
 
-Currently, two official plugins are available:
+**Live:** https://ilken.github.io/boulevard-dex/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Dex** — all 150 numbered cars as cards with photos, search, year/mix/status filters (shareable
+  via URL), odometer stats, and per-year completion.
+- **Checklist** — one row per car with Owned and Mint-in-box switches (mint implies owned).
+- **Car detail** — hero photo, specs, inline toggles, prev/next dex navigation.
+- **Profile** — nickname, city, country, and a Boulevard car as your avatar. Stored in
+  localStorage with a versioned schema, ready for trading features later.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the Oxlint configuration
+Vite · React 19 · TypeScript · Tailwind CSS v4 · TanStack Router · yarn v1.
+Dex data is hardcoded in `src/data/cars.constants.ts` with build-load integrity assertions;
+user state lives in localStorage. Brand and motion rules: `BRAND-VOICE.md`, `DESIGN-TOKENS.md`,
+`MOTION-SPEC.md`.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Develop
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```sh
+yarn          # install
+yarn dev      # dev server
+yarn validate # typecheck + lint + format check + build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Car photos live in `public/cars/{id}.webp` (sourced from the Hot Wheels Fandom wiki;
+`node scripts/fetch-images.mjs` refreshes them). Any missing photo falls back to a branded
+SVG silhouette matched to the car's body type.
