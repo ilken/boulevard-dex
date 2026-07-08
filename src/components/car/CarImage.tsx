@@ -11,7 +11,7 @@ interface CarImageProps {
 
 /**
  * The single image component for the whole app (grid, checklist, detail, avatar).
- * Photos live in public/cars/{id}.jpg; missing ones degrade to the branded silhouette.
+ * Photos live in public/cars/{id}.webp; missing ones degrade to the branded silhouette.
  */
 export function CarImage({ car, className }: CarImageProps) {
   const [failed, setFailed] = useState(false)
@@ -34,7 +34,7 @@ export function CarImage({ car, className }: CarImageProps) {
         />
       )}
       <img
-        src={`${import.meta.env.BASE_URL}cars/${car.id}.jpg`}
+        src={`${import.meta.env.BASE_URL}cars/${car.id}.webp`}
         alt={car.name}
         loading="lazy"
         onLoad={() => setLoaded(true)}
