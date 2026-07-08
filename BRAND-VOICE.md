@@ -11,13 +11,13 @@ A city boulevard at 1 a.m.: wet asphalt reflecting deep navy, one amber neon scr
 
 ## Personality Spectrum
 
-| Axis | ← | Center | → |
-|------|---|--------|---|
-| Serious ←→ Playful | | | **playful-leaning** |
-| Minimal ←→ Expressive | | | **expressive** |
-| Warm ←→ Cool | **warm neon on cool navy** | | |
-| Corporate ←→ Human | | | **human** |
-| Dense ←→ Airy | **dense-ish (collector grid)** | | |
+| Axis                  | ←                              | Center | →                   |
+| --------------------- | ------------------------------ | ------ | ------------------- |
+| Serious ←→ Playful    |                                |        | **playful-leaning** |
+| Minimal ←→ Expressive |                                |        | **expressive**      |
+| Warm ←→ Cool          | **warm neon on cool navy**     |        |                     |
+| Corporate ←→ Human    |                                |        | **human**           |
+| Dense ←→ Airy         | **dense-ish (collector grid)** |        |                     |
 
 ---
 
@@ -46,6 +46,7 @@ A city boulevard at 1 a.m.: wet asphalt reflecting deep navy, one amber neon scr
 **Never write like**: Marketing copy. Exclamation points. Vague superlatives. Emoji.
 
 **UI microcopy examples**:
+
 - Empty state: "No cars match. Loosen the filters."
 - Error/corrupt data: "Couldn't read your garage. Starting fresh."
 - CTA: "Track your collection" not "Start your collecting journey today!"
@@ -55,7 +56,7 @@ A city boulevard at 1 a.m.: wet asphalt reflecting deep navy, one amber neon scr
 
 ## Visual Don'ts
 
-- No AI purple/pink gradients as base surfaces (pink is a neon *accent*, never a wash)
+- No AI purple/pink gradients as base surfaces (pink is a neon _accent_, never a wash)
 - No emoji as icons
 - No light mode — this is a night street, permanently
 - Neon glow is earned: hover states and brand moments only, never on every element

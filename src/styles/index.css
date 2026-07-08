@@ -35,12 +35,12 @@
   --color-info: #3b82f6;
 
   /* Neon glows — hover states and brand moments only */
-  --shadow-glow-amber: 0 0 2px #ffc24b, 0 0 12px rgb(255 194 75 / 0.4),
-    0 0 32px rgb(255 194 75 / 0.15);
-  --shadow-glow-pink: 0 0 2px #ff4d8d, 0 0 12px rgb(255 77 141 / 0.4),
-    0 0 32px rgb(255 77 141 / 0.15);
-  --shadow-glow-cyan: 0 0 2px #5be1e6, 0 0 12px rgb(91 225 230 / 0.4),
-    0 0 32px rgb(91 225 230 / 0.15);
+  --shadow-glow-amber:
+    0 0 2px #ffc24b, 0 0 12px rgb(255 194 75 / 0.4), 0 0 32px rgb(255 194 75 / 0.15);
+  --shadow-glow-pink:
+    0 0 2px #ff4d8d, 0 0 12px rgb(255 77 141 / 0.4), 0 0 32px rgb(255 77 141 / 0.15);
+  --shadow-glow-cyan:
+    0 0 2px #5be1e6, 0 0 12px rgb(91 225 230 / 0.4), 0 0 32px rgb(91 225 230 / 0.15);
   --shadow-card: 0 8px 30px rgb(0 0 0 / 0.35);
   --shadow-focus: 0 0 0 3px rgb(255 194 75 / 0.4);
 
