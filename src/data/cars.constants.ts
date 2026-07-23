@@ -725,7 +725,7 @@ const SEEDS: readonly CarSeed[] = [
     make: 'Lamborghini',
   },
   { id: 140, name: 'Ford RS200', year: 2025, mix: 'E', bodyType: 'supercar', make: 'Ford' },
-  // 2026 — Mix A–B so far (#141–150)
+  // 2026 — Mix A–C so far (#141–155)
   {
     id: 141,
     name: 'Nissan 300ZX Twin Turbo',
@@ -784,6 +784,46 @@ const SEEDS: readonly CarSeed[] = [
     mix: 'B',
     bodyType: 'jdm',
     make: 'Nissan',
+  },
+  {
+    id: 151,
+    name: "'15 Toyota Alphard",
+    year: 2026,
+    mix: 'C',
+    bodyType: 'van-bus',
+    make: 'Toyota',
+  },
+  {
+    id: 152,
+    name: 'Koenigsegg CC850',
+    year: 2026,
+    mix: 'C',
+    bodyType: 'supercar',
+    make: 'Koenigsegg',
+  },
+  {
+    id: 153,
+    name: 'Datsun King Cab Baja Custom',
+    year: 2026,
+    mix: 'C',
+    bodyType: 'off-road',
+    make: 'Datsun',
+  },
+  {
+    id: 154,
+    name: "'67 Jeepster Commando",
+    year: 2026,
+    mix: 'C',
+    bodyType: 'off-road',
+    make: 'Jeep',
+  },
+  {
+    id: 155,
+    name: "'21 Toyota GR Supra",
+    year: 2026,
+    mix: 'C',
+    bodyType: 'jdm',
+    make: 'Toyota',
   },
 ]
 
