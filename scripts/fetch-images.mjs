@@ -20,7 +20,7 @@ const WIDTH = 640
 
 /** Offset of each year's series numbering within the continuous dex. */
 const YEAR_OFFSETS = { 2020: 0, 2021: 20, 2022: 40, 2023: 65, 2024: 90, 2025: 115, 2026: 140 }
-const YEAR_COUNTS = { 2020: 20, 2021: 20, 2022: 25, 2023: 25, 2024: 25, 2025: 25, 2026: 10 }
+const YEAR_COUNTS = { 2020: 20, 2021: 20, 2022: 25, 2023: 25, 2024: 25, 2025: 25, 2026: 15 }
 
 async function fetchPageHtml(year) {
   const url = `${API}?action=parse&page=${encodeURIComponent(`${year} Hot Wheels Boulevard`)}&format=json&prop=text`

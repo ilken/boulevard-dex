@@ -42,6 +42,20 @@ export function toggleMint(carId: number): void {
   })
 }
 
+/** Sets owned for many cars in one write — used by the Owner's Garage preset. */
+export function setOwnedBulk(carIds: readonly number[], owned: boolean): void {
+  store.update((previous) => {
+    const updatedAt = new Date().toISOString()
+    const cars = { ...previous.cars }
+    for (const carId of carIds) {
+      const entry = entryFor(carId, previous.cars)
+      // Letting go of the car also lets go of its mint status.
+      cars[String(carId)] = { owned, mint: owned && entry.mint, updatedAt }
+    }
+    return { ...previous, cars }
+  })
+}
+
 export function useCollection(): {
   entries: Record<string, CollectionEntry>
   stats: DexStats
