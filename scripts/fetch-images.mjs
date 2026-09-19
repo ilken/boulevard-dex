@@ -13,14 +13,27 @@ import { fileURLToPath } from 'node:url'
 
 const YEARS = [2020, 2021, 2022, 2023, 2024, 2025, 2026]
 const API = 'https://hotwheels.fandom.com/api.php'
-const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) BoulevardDex/1.0'
+const USER_AGENT =
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
+/**
+ * The Fandom image CDN sits behind a bot challenge that rejects bare requests, so image
+ * downloads send the header set a browser would send when loading an <img> from a wiki page.
+ */
+const IMAGE_HEADERS = {
+  'user-agent': USER_AGENT,
+  accept: 'image/avif,image/webp,*/*',
+  'accept-language': 'en-GB,en;q=0.9',
+  'sec-fetch-dest': 'image',
+  'sec-fetch-mode': 'no-cors',
+  'sec-fetch-site': 'cross-site',
+}
 const OUT_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'public', 'cars')
 const MIN_BYTES = 5 * 1024
 const WIDTH = 640
 
 /** Offset of each year's series numbering within the continuous dex. */
 const YEAR_OFFSETS = { 2020: 0, 2021: 20, 2022: 40, 2023: 65, 2024: 90, 2025: 115, 2026: 140 }
-const YEAR_COUNTS = { 2020: 20, 2021: 20, 2022: 25, 2023: 25, 2024: 25, 2025: 25, 2026: 15 }
+const YEAR_COUNTS = { 2020: 20, 2021: 20, 2022: 25, 2023: 25, 2024: 25, 2025: 25, 2026: 25 }
 
 async function fetchPageHtml(year) {
   const url = `${API}?action=parse&page=${encodeURIComponent(`${year} Hot Wheels Boulevard`)}&format=json&prop=text`
@@ -59,8 +72,13 @@ async function alreadyDownloaded(file) {
   }
 }
 
-async function download(url, file) {
-  const response = await fetch(url, { headers: { 'user-agent': USER_AGENT } })
+async function download(url, file, year) {
+  const response = await fetch(url, {
+    headers: {
+      ...IMAGE_HEADERS,
+      referer: `https://hotwheels.fandom.com/wiki/${year}_Hot_Wheels_Boulevard`,
+    },
+  })
   if (!response.ok) return false
   const type = response.headers.get('content-type') ?? ''
   if (!type.startsWith('image/')) return false
@@ -93,7 +111,7 @@ async function main() {
         skipped += 1
         continue
       }
-      if (url && (await download(url, file))) {
+      if (url && (await download(url, file, year))) {
         downloaded += 1
         console.log(`✓ #${String(dexId).padStart(3, '0')}`)
       } else {

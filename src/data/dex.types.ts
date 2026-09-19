@@ -6,7 +6,7 @@ export type Mix = 'A' | 'B' | 'C' | 'D' | 'E'
 export type BodyType = 'muscle' | 'jdm' | 'van-bus' | 'off-road' | 'supercar' | 'classic'
 
 export interface Car {
-  /** Dex number, 1–155, continuous across years — Boulevard's signature. */
+  /** Dex number, 1–165, continuous across years — Boulevard's signature. */
   id: number
   /** Unique URL slug; the padded id suffix disambiguates repeated castings. */
   slug: string

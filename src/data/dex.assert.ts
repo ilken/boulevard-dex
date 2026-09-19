@@ -1,6 +1,6 @@
 import type { Car, DexYear } from './dex.types'
 
-const EXPECTED_TOTAL = 155
+const EXPECTED_TOTAL = 165
 
 /** Per-year totals from the source checklist; guards transcription slips. */
 const EXPECTED_BY_YEAR: Readonly<Record<DexYear, number>> = {
@@ -10,7 +10,7 @@ const EXPECTED_BY_YEAR: Readonly<Record<DexYear, number>> = {
   2023: 25,
   2024: 25,
   2025: 25,
-  2026: 15,
+  2026: 25,
 }
 
 /** Runs once at module load; a broken dataset should never render. */

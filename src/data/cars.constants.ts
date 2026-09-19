@@ -725,7 +725,7 @@ const SEEDS: readonly CarSeed[] = [
     make: 'Lamborghini',
   },
   { id: 140, name: 'Ford RS200', year: 2025, mix: 'E', bodyType: 'supercar', make: 'Ford' },
-  // 2026 — Mix A–C so far (#141–155)
+  // 2026 — Mix A–E (#141–165)
   {
     id: 141,
     name: 'Nissan 300ZX Twin Turbo',
@@ -825,6 +825,51 @@ const SEEDS: readonly CarSeed[] = [
     bodyType: 'jdm',
     make: 'Toyota',
   },
+  { id: 156, name: 'Enzo Ferrari', year: 2026, mix: 'D', bodyType: 'supercar', make: 'Ferrari' },
+  {
+    id: 157,
+    name: "'66 Chevy Super Nova",
+    year: 2026,
+    mix: 'D',
+    bodyType: 'muscle',
+    make: 'Chevrolet',
+  },
+  {
+    id: 158,
+    name: 'Aston Martin DBS',
+    year: 2026,
+    mix: 'D',
+    bodyType: 'supercar',
+    make: 'Aston Martin',
+  },
+  {
+    id: 159,
+    name: '1989 Mercedes-Benz 560 SEC AMG',
+    year: 2026,
+    mix: 'D',
+    bodyType: 'classic',
+    make: 'Mercedes-Benz',
+  },
+  { id: 160, name: "'71 El Camino", year: 2026, mix: 'D', bodyType: 'muscle', make: 'Chevrolet' },
+  {
+    id: 161,
+    name: '1995 Chevrolet Tahoe',
+    year: 2026,
+    mix: 'E',
+    bodyType: 'off-road',
+    make: 'Chevrolet',
+  },
+  {
+    id: 162,
+    name: '2023 Lamborghini Revuelto',
+    year: 2026,
+    mix: 'E',
+    bodyType: 'supercar',
+    make: 'Lamborghini',
+  },
+  { id: 163, name: "'49 Ford F1", year: 2026, mix: 'E', bodyType: 'classic', make: 'Ford' },
+  { id: 164, name: 'BMW M3 GT2', year: 2026, mix: 'E', bodyType: 'supercar', make: 'BMW' },
+  { id: 165, name: 'Datsun 240Z', year: 2026, mix: 'E', bodyType: 'jdm', make: 'Datsun' },
 ]
 
 export const CARS: readonly Car[] = SEEDS.map((seed) => ({
