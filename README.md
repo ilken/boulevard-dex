@@ -1,14 +1,14 @@
 # Boulevard Dex
 
 A Pokédex-style collection tracker for the **Hot Wheels Boulevard** reboot — the only Hot Wheels
-premium line with continuous numbering across years (#001 in 2020 to #150 and counting). Metal on
+premium line with continuous numbering across years (#001 in 2020 to #165 and counting). Metal on
 metal. Real Riders. Walmart shelves only.
 
 **Live:** https://ilken.github.io/boulevard-dex/
 
 ## Features
 
-- **Dex** — all 150 numbered cars as cards with photos, search, year/mix/status filters (shareable
+- **Dex** — all 165 numbered cars as cards with photos, search, year/mix/status filters (shareable
   via URL), odometer stats, and per-year completion.
 - **My Garage** — one row per car with Owned and Mint-in-box switches (mint implies owned).
 - **Car detail** — hero photo, specs, inline toggles, prev/next dex navigation.
